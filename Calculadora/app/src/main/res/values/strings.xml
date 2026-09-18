@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CalculadoraNoite</string>
+    <string name="DigitePrimeiroNumero">Digite o primeiro número</string>
+    <string name="DigiteSegundoNumero">Digite o segundo número</string>
+    <string name="Somar">Somar</string>
+    <string name="Subtrair">Subtrair</string>
+    <string name="Multiplicar">Multiplicar</string>
+    <string name="Dividir">Dividir</string>
+    <string name="Resultado">Resultado</string>
 </resources>

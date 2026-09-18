@@ -49,6 +49,27 @@ public class MainActivity extends AppCompatActivity
         txvResultado = findViewById(R.id.txvResultado);
     }
 
+    public void executar(String op)
+    {
+        try
+        {
+            Double n1 = 0.0;
+            Double n2 = 0.0;
+            Double resultado = 0.0;
+            n1 = Double.parseDouble(edtPrimeiroNumero.getText().toString());
+            n2 = Double.parseDouble(edtSegundoNumero.getText().toString());
+            if (op == "+") resultado = n1 + n2;
+            if (op == "-") resultado = n1 - n2;
+            if (op == "*") resultado = n1 * n2;
+            if (op == "/") resultado = n1 / n2;
+            txvResultado.setText(resultado.toString());
+        }
+        catch (Exception e)
+        {
+            txvResultado.setText("Erro de cálculo");
+        }
+    }
+
     public void eventos()
     {
         btnSomar.setOnClickListener(new View.OnClickListener()
@@ -56,13 +77,34 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Double n1 = 0.0;
-                Double n2 = 0.0;
-                Double resultado = 0.0;
-                n1 = Double.parseDouble(edtPrimeiroNumero.getText().toString());
-                n2 = Double.parseDouble(edtSegundoNumero.getText().toString());
-                resultado = n1 + n2;
-                txvResultado.setText(resultado.toString());
+                executar("+");
+            }
+        });
+
+        btnSubtrair.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                executar("-");
+            }
+        });
+
+        btnMultiplicar.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                executar("*");
+            }
+        });
+
+        btnDividir.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                executar("/");
             }
         });
     }
