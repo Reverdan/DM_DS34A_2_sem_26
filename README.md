@@ -355,7 +355,7 @@ Didaticamente, esse projeto mostra corretamente o mecanismo: a interface usa cha
 
 ### Observação sobre o estado atual do projeto
 
-Ao inspecionar os arquivos atuais, nota-se que `values-en-rCA/strings.xml` está sendo usado com textos em português. Na prática, isso faz o Android entregar textos em português quando o aparelho estiver configurado para a localidade `en-CA`, por isso esse ponto deve ser entendido como uma inconsistência de conteúdo a corrigir no projeto, e não como a convenção esperada para esse diretório.
+Ao inspecionar os arquivos atuais, nota-se que `values-en-rCA/strings.xml` está sendo usado com textos em português. Na prática, isso faz o Android entregar textos em português quando o aparelho estiver configurado para a localidade `en-CA`. Portanto, ao estudar este projeto, é importante separar duas coisas: a convenção esperada dos diretórios de recursos e o comportamento atualmente produzido pelos arquivos existentes.
 
 ### Leitura didática dessa estrutura
 
