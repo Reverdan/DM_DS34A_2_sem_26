@@ -58,11 +58,21 @@ public class MainActivity extends AppCompatActivity
             Double resultado = 0.0;
             n1 = Double.parseDouble(edtPrimeiroNumero.getText().toString());
             n2 = Double.parseDouble(edtSegundoNumero.getText().toString());
-            if (op == "+") resultado = n1 + n2;
-            if (op == "-") resultado = n1 - n2;
-            if (op == "*") resultado = n1 * n2;
-            if (op == "/") resultado = n1 / n2;
-            txvResultado.setText(resultado.toString());
+            if (op.equals("+")) resultado = n1 + n2;
+            if (op.equals("-")) resultado = n1 - n2;
+            if (op.equals("*")) resultado = n1 * n2;
+            if (op.equals("/"))
+            {
+                if (n2 == 0)
+                    txvResultado.setText("Divisão por zero");
+                else
+                {
+                    resultado = n1 / n2;
+                    txvResultado.setText(resultado.toString());
+                }
+            }
+            else
+                txvResultado.setText(resultado.toString());
         }
         catch (Exception e)
         {
