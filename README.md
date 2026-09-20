@@ -161,7 +161,7 @@ O método compara o parâmetro `op`:
 - `"/"` → divisão
 
 ### Etapa 6: tratamento especial da divisão
-Se `n2 == 0`, o app mostra `Divisão por zero`.
+Se `n2 == 0`, o app mostra o texto literal `Divisão por zero`, definido diretamente em `MainActivity.java` e não via recurso de string.
 
 Se o divisor for válido, a divisão é executada e o resultado é exibido.
 
@@ -169,7 +169,7 @@ Se o divisor for válido, a divisão é executada e o resultado é exibido.
 `txvResultado.setText(...)` atualiza a interface com o valor final.
 
 ### Etapa 8: tratamento de erro
-Se o usuário deixar um campo vazio ou digitar algo inválido, o `catch` exibe `Erro de cálculo`.
+Se o usuário deixar um campo vazio ou digitar algo inválido, o `catch` exibe o texto literal `Erro de cálculo`, também definido diretamente em `MainActivity.java`.
 
 ---
 
@@ -355,7 +355,9 @@ Didaticamente, esse projeto mostra corretamente o mecanismo: a interface usa cha
 
 ### Observação sobre o estado atual do projeto
 
-Ao inspecionar os arquivos atuais, nota-se que `values-en-rCA/strings.xml` está sendo usado com textos em português. Na prática, isso faz o Android entregar textos em português quando o aparelho estiver configurado para a localidade `en-CA`. Portanto, ao estudar este projeto, é importante separar duas coisas: a convenção esperada dos diretórios de recursos e o comportamento atualmente produzido pelos arquivos existentes.
+Ao inspecionar os arquivos atuais, nota-se que `values-en-rCA/strings.xml` está sendo usado com textos em português. Na prática, isso faz o Android entregar textos em português quando o aparelho estiver configurado para a localidade `en-CA`.
+
+Pela convenção correta, esse diretório deveria conter traduções compatíveis com `en-CA`; se a intenção fosse manter português, o conteúdo deveria estar em um diretório compatível com português, como `values-pt/` ou `values-pt-rBR/`. Esse contraste é útil didaticamente porque mostra que o Android escolhe recursos pela localidade do diretório, e não pelo idioma que o desenvolvedor pretendia usar.
 
 ### Leitura didática dessa estrutura
 
