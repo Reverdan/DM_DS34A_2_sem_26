@@ -7,4 +7,6 @@
     <string name="Multiplicar">Multiplicar</string>
     <string name="Dividir">Dividir</string>
     <string name="Resultado">Resultado</string>
+    <string name="msg_divisao_zero">Divisão por zero</string>
+    <string name="msg_erro_calculo">Erro de cálculo</string>
 </resources>

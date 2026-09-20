@@ -162,7 +162,7 @@ O método compara o parâmetro `op`:
 - `"/"` → divisão
 
 ### Etapa 6: tratamento especial da divisão
-Se `n2 == 0`, o app mostra o texto literal `Divisão por zero`, definido diretamente em `MainActivity.java` e não via recurso de string.
+Se `n2 == 0`, o app mostra uma mensagem de erro obtida por recurso de string (`msg_divisao_zero`), mantendo a tela compatível com a internacionalização.
 
 Se o divisor for válido, a divisão é executada e o resultado é exibido.
 
@@ -170,7 +170,7 @@ Se o divisor for válido, a divisão é executada e o resultado é exibido.
 `txvResultado.setText(...)` atualiza a interface com o valor final.
 
 ### Etapa 8: tratamento de erro
-Se o usuário deixar um campo vazio ou digitar algo inválido, o `catch` exibe o texto literal `Erro de cálculo`, também definido diretamente em `MainActivity.java`.
+Se o usuário deixar um campo vazio ou digitar algo inválido, o `catch` exibe outra mensagem obtida por recurso de string (`msg_erro_calculo`).
 
 ---
 
@@ -269,7 +269,7 @@ Um fluxo comum seria:
 4. usuário gira o celular → activity atual pode passar por `onPause()`, `onStop()`, `onDestroy()`
 5. nova instância é criada → `onCreate()`, `onStart()`, `onResume()`
 
-Como o projeto não salva estado manualmente, o conteúdo digitado pode ser perdido em recriações, dependendo do comportamento do sistema e dos componentes.
+Como o projeto não implementa salvamento manual de estado de negócio, apenas o que o Android restaura automaticamente pelas próprias views tende a voltar após recriações. Em geral, campos como `EditText` podem recuperar o texto quando mantêm `id` estável, mas resultados calculados e outros estados controlados pela activity exigiriam tratamento explícito se precisassem ser preservados com garantia.
 
 ---
 
@@ -354,13 +354,18 @@ Em Android, a convenção é:
 
 Didaticamente, esse projeto mostra corretamente o mecanismo: a interface usa chaves `@string/...`, e o Android decide em tempo de execução qual arquivo de recursos carregar.
 
-### Observação pedagógica sobre o estado atual do projeto
+### Organização atual do projeto
 
-Ao inspecionar os arquivos atuais, nota-se que `values-en-rCA/strings.xml` está sendo usado com textos em português. Isso deve ser lido como um **erro conhecido no estado atual dos recursos**, útil apenas para entender o impacto da escolha de diretórios. Na prática, essa configuração faz o Android entregar textos em português quando o aparelho estiver configurado para a localidade `en-CA`.
+No estado atual do app:
 
-Pela convenção correta, esse diretório deveria conter traduções compatíveis com `en-CA`; se a intenção fosse manter português, o conteúdo deveria estar em um diretório compatível com português, como `values-pt/` ou `values-pt-rBR/`. Esse contraste é útil didaticamente porque mostra que o Android escolhe recursos pela localidade do diretório, e não pelo idioma que o desenvolvedor pretendia usar.
+- `values/strings.xml` funciona como conjunto padrão e contém os textos em português
+- `values-en-rCA/strings.xml` contém a variação em inglês para a localidade `en-CA`
+
+Isso deixa a internacionalização coerente com a convenção do Android: a interface padrão do projeto fica em português, e aparelhos configurados para `en-CA` recebem as traduções em inglês.
 
 ### Leitura didática dessa estrutura
+
+Além disso, as mensagens de erro visíveis ao usuário também foram colocadas em recursos de string, mantendo o mesmo padrão de internacionalização usado pelos rótulos da interface.
 
 Independentemente do idioma específico salvo em cada arquivo, o ponto principal para estudo é este:
 

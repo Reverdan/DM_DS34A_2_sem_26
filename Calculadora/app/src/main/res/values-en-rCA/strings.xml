@@ -8,4 +8,6 @@
     <string name="Multiplicar">Multiply</string>
     <string name="Dividir">Divide</string>
     <string name="Resultado">Result</string>
+    <string name="msg_divisao_zero">Division by zero</string>
+    <string name="msg_erro_calculo">Calculation error</string>
 </resources>
