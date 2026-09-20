@@ -276,7 +276,7 @@ Como o projeto não salva estado manualmente, o conteúdo digitado pode ser perd
 
 O projeto não possui várias activities acopladas entre si. Em vez disso, ele possui **uma única activity** com **duas versões de layout**, uma para vertical e outra para horizontal.
 
-## Acoplamento vertical
+### Acoplamento vertical
 
 O arquivo `res/layout/activity_main.xml` é a versão padrão da tela.
 
@@ -290,7 +290,7 @@ Nele, a organização principal é vertical:
 
 Isso cria um fluxo de leitura de cima para baixo.
 
-## Acoplamento horizontal
+### Acoplamento horizontal
 
 O arquivo `res/layout-land/activity_main.xml` é usado quando o aparelho está em modo paisagem.
 
@@ -299,7 +299,7 @@ Nesse caso, a tela fica dividida em duas colunas:
 - coluna da esquerda: entradas
 - coluna da direita: botões e resultado
 
-## Como esse acoplamento funciona
+### Como esse acoplamento funciona
 
 O acoplamento entre código e layout ocorre por meio dos mesmos `ids`:
 
@@ -348,7 +348,12 @@ O Android procura o recurso mais específico compatível com o idioma/região do
 
 Pelos conteúdos atuais de `res/values/strings.xml` e `res/values-en-rCA/strings.xml`, o projeto já demonstra a separação técnica entre idioma padrão e idioma qualificado por localidade.
 
-Ao mesmo tempo, a coerência final entre diretório e idioma exibido depende diretamente do conteúdo mantido nesses arquivos. Por isso, sempre que houver alteração de idioma, o ideal é conferir se o nome da pasta e o texto armazenado nela continuam compatíveis entre si.
+Hoje, especificamente:
+
+- `values/strings.xml` funciona como conjunto padrão e contém textos em inglês
+- `values-en-rCA/strings.xml` representa a localidade English (Canada), mas no estado atual contém textos em português
+
+Isso mostra bem dois pontos didáticos: o mecanismo de i18n está presente e, ao mesmo tempo, a coerência entre localidade e conteúdo precisa ser mantida manualmente pelos arquivos de recurso.
 
 ### Leitura didática dessa estrutura
 
