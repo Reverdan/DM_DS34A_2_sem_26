@@ -1,4 +1,4 @@
-# README do repositório e do subprojeto Android CalculadoraNoite
+# README do repositório e do projeto Android da pasta `Calculadora`
 
 Este repositório contém um aplicativo Android simples de calculadora, localizado na pasta `Calculadora/`. O nome interno do app é `CalculadoraNoite`, conforme definido no projeto Android. O app foi construído em Java, usando `AppCompatActivity`, `ConstraintLayout`, `LinearLayout`, `ScrollView` e recursos de internacionalização por meio de `strings.xml`.
 
@@ -344,16 +344,18 @@ Isso evita texto fixo direto no layout e facilita tradução.
 
 O Android procura o recurso mais específico compatível com o idioma/região do aparelho. Se não encontrar, usa o diretório padrão `values/`.
 
-## Situação atual observada nos arquivos
+## Convenção de organização dos idiomas
 
-Pelos conteúdos atuais de `res/values/strings.xml` e `res/values-en-rCA/strings.xml`, o projeto já demonstra a separação técnica entre idioma padrão e idioma qualificado por localidade.
+Em Android, a convenção é:
 
-Hoje, especificamente:
+- `values/` guarda o conjunto padrão de strings
+- diretórios qualificados, como `values-en-rCA/`, guardam variações para idioma e região específicos
 
-- `values/strings.xml` funciona como conjunto padrão e contém textos em inglês
-- `values-en-rCA/strings.xml` representa a localidade English (Canada), mas no estado atual contém textos em português
+Didaticamente, esse projeto mostra corretamente o mecanismo: a interface usa chaves `@string/...`, e o Android decide em tempo de execução qual arquivo de recursos carregar.
 
-Isso mostra bem dois pontos didáticos: o mecanismo de i18n está presente e, ao mesmo tempo, a coerência entre localidade e conteúdo precisa ser mantida manualmente pelos arquivos de recurso.
+### Observação sobre o estado atual do projeto
+
+Ao inspecionar os arquivos atuais, nota-se que `values-en-rCA/strings.xml` está sendo usado com textos em português. Isso deve ser entendido como uma inconsistência de conteúdo a corrigir no projeto, e não como a convenção esperada para esse diretório.
 
 ### Leitura didática dessa estrutura
 
