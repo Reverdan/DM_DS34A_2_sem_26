@@ -269,7 +269,7 @@ Um fluxo comum seria:
 4. usuário gira o celular → activity atual pode passar por `onPause()`, `onStop()`, `onDestroy()`
 5. nova instância é criada → `onCreate()`, `onStart()`, `onResume()`
 
-Como o projeto não implementa salvamento manual de estado de negócio, apenas o que o Android restaura automaticamente pelas próprias views tende a voltar após recriações. Em geral, campos como `EditText` podem recuperar o texto quando mantêm `id` estável, mas resultados calculados e outros estados controlados pela activity exigiriam tratamento explícito se precisassem ser preservados com garantia.
+Como o projeto não implementa salvamento manual de estado de negócio, ele depende principalmente do mecanismo automático de restauração das próprias views do Android durante recriações. Em geral, componentes com `id` estável, como `EditText` e `TextView`, podem recuperar seu conteúdo visual; já estados mais elaborados, derivados ou controlados fora das views precisariam de tratamento explícito se o projeto quisesse garantir sua preservação.
 
 ---
 
