@@ -1,4 +1,4 @@
-# README do repositório: projeto Android CalculadoraNoite
+# README do repositório e do subprojeto Android CalculadoraNoite
 
 Este repositório contém um aplicativo Android simples de calculadora, localizado na pasta `Calculadora/`. O nome interno do app é `CalculadoraNoite`, conforme definido no projeto Android. O app foi construído em Java, usando `AppCompatActivity`, `ConstraintLayout`, `LinearLayout`, `ScrollView` e recursos de internacionalização por meio de `strings.xml`.
 
@@ -344,19 +344,11 @@ Isso evita texto fixo direto no layout e facilita tradução.
 
 O Android procura o recurso mais específico compatível com o idioma/região do aparelho. Se não encontrar, usa o diretório padrão `values/`.
 
-## Situação atual do projeto
+## Situação atual observada nos arquivos
 
-Há um detalhe importante: atualmente os arquivos estão invertidos do ponto de vista semântico:
+Pelos conteúdos atuais de `res/values/strings.xml` e `res/values-en-rCA/strings.xml`, o projeto já demonstra a separação técnica entre idioma padrão e idioma qualificado por localidade.
 
-- `values/strings.xml` contém textos em inglês
-- `values-en-rCA/strings.xml` contém textos em português
-
-Na prática, isso significa que:
-
-- o idioma padrão do app tende a aparecer em inglês
-- para a qualificação `en-rCA` (inglês do Canadá), o conteúdo também não está coerente, porque o texto está em português
-
-Ou seja, a estrutura de i18n existe, mas o mapeamento dos idiomas não representa corretamente os locais.
+Ao mesmo tempo, a coerência final entre diretório e idioma exibido depende diretamente do conteúdo mantido nesses arquivos. Por isso, sempre que houver alteração de idioma, o ideal é conferir se o nome da pasta e o texto armazenado nela continuam compatíveis entre si.
 
 ### Conceito correto de internacionalização aqui
 
@@ -425,13 +417,16 @@ No módulo `app`, o projeto usa:
 
 ### Configurações principais
 
-- `compileSdk = 36`
-- `minSdk = 26`
-- `targetSdk = 36`
-- `versionCode = 1`
-- `versionName = "1.0"`
+Os valores exatos de `compileSdk`, `minSdk`, `targetSdk`, `versionCode` e `versionName` ficam centralizados em `Calculadora/app/build.gradle.kts`.
 
-Isso indica um projeto Android moderno, mas com lógica bem introdutória.
+Para um README didático, o mais importante é entender o papel dessas propriedades:
+
+- `compileSdk`: define contra qual API o app é compilado
+- `minSdk`: define a versão mínima do Android suportada
+- `targetSdk`: informa para qual comportamento moderno do Android o app foi ajustado
+- `versionCode` e `versionName`: identificam a versão técnica e a versão visível do app
+
+Isso mostra que o projeto segue a organização padrão de build do Android Gradle Plugin.
 
 ---
 
