@@ -350,15 +350,15 @@ Pelos conteúdos atuais de `res/values/strings.xml` e `res/values-en-rCA/strings
 
 Ao mesmo tempo, a coerência final entre diretório e idioma exibido depende diretamente do conteúdo mantido nesses arquivos. Por isso, sempre que houver alteração de idioma, o ideal é conferir se o nome da pasta e o texto armazenado nela continuam compatíveis entre si.
 
-### Conceito correto de internacionalização aqui
+### Leitura didática dessa estrutura
 
-Idealmente:
+Independentemente do idioma específico salvo em cada arquivo, o ponto principal para estudo é este:
 
-- `values/strings.xml` deveria ser o idioma padrão do projeto
-- `values-pt/strings.xml` ou `values-pt-rBR/strings.xml` deveria conter português
-- `values-en/strings.xml` deveria conter inglês
+- o layout referencia textos por chave, usando `@string/...`
+- os textos ficam separados da lógica Java
+- o Android seleciona o conjunto de recursos mais adequado para idioma e localidade
 
-Mesmo assim, o projeto já demonstra bem o princípio técnico de internacionalização: separar textos da lógica e da interface.
+Assim, o projeto demonstra bem o princípio técnico da internacionalização: separar textos da lógica e da interface.
 
 ---
 
