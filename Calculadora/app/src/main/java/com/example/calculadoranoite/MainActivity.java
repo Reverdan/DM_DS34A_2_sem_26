@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity
             if (op.equals("/"))
             {
                 if (n2 == 0)
-                    txvResultado.setText("Divisão por zero");
+                   txvResultado.setText(getString(R.string.msg_divisao_zero));
                 else
                 {
                     resultado = n1 / n2;
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity
         }
         catch (Exception e)
         {
-            txvResultado.setText("Erro de cálculo");
+            txvResultado.setText(getString(R.string.msg_erro_calculo));
         }
     }
 
