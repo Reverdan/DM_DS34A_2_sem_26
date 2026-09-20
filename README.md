@@ -1,6 +1,6 @@
-# Projeto Android: CalculadoraNoite
+# README do repositório: projeto Android CalculadoraNoite
 
-Este repositório contém um aplicativo Android simples de calculadora, localizado na pasta `Calculadora/`. O app foi construído em Java, usando `AppCompatActivity`, `ConstraintLayout`, `LinearLayout`, `ScrollView` e recursos de internacionalização por meio de `strings.xml`.
+Este repositório contém um aplicativo Android simples de calculadora, localizado na pasta `Calculadora/`. O nome interno do app é `CalculadoraNoite`, conforme definido no projeto Android. O app foi construído em Java, usando `AppCompatActivity`, `ConstraintLayout`, `LinearLayout`, `ScrollView` e recursos de internacionalização por meio de `strings.xml`.
 
 O objetivo do projeto é receber dois números digitados pelo usuário, executar uma das quatro operações básicas (`+`, `-`, `*`, `/`) e exibir o resultado na tela.
 
@@ -61,7 +61,7 @@ Ela herda de `AppCompatActivity`, ou seja, participa do ciclo de vida padrão do
 Na classe existem referências para os componentes de tela:
 
 - `EditText edtPrimeiroNumero`
-- `EditText edtSegundoNumero`
+- `EditText edtSegundoNumero` (variável Java ligada ao `id` XML `edtSegundonumero`)
 - `Button btnSomar`
 - `Button btnSubtrair`
 - `Button btnMultiplicar`
@@ -304,7 +304,7 @@ Nesse caso, a tela fica dividida em duas colunas:
 O acoplamento entre código e layout ocorre por meio dos mesmos `ids`:
 
 - `edtPrimeiroNumero`
-- `edtSegundonumero`
+- `edtSegundonumero` (id real definido no XML)
 - `btnSomar`
 - `btnSubtrair`
 - `btnMultiplicar`
