@@ -17,7 +17,8 @@ DM_DS34A_2_sem_26/
 │   │   ├── src/main/res/layout-land/activity_main.xml
 │   │   ├── src/main/res/values/strings.xml
 │   │   ├── src/main/res/values-en-rCA/strings.xml
-│   │   └── src/main/AndroidManifest.xml
+│   │   ├── src/main/AndroidManifest.xml
+│   │   └── build.gradle.kts
 │   ├── build.gradle.kts
 │   └── settings.gradle.kts
 └── README.md
