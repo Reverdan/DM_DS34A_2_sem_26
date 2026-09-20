@@ -354,9 +354,9 @@ Em Android, a convenção é:
 
 Didaticamente, esse projeto mostra corretamente o mecanismo: a interface usa chaves `@string/...`, e o Android decide em tempo de execução qual arquivo de recursos carregar.
 
-### Observação sobre o estado atual do projeto
+### Observação pedagógica sobre o estado atual do projeto
 
-Ao inspecionar os arquivos atuais, nota-se que `values-en-rCA/strings.xml` está sendo usado com textos em português. Na prática, isso faz o Android entregar textos em português quando o aparelho estiver configurado para a localidade `en-CA`.
+Ao inspecionar os arquivos atuais, nota-se que `values-en-rCA/strings.xml` está sendo usado com textos em português. Isso deve ser lido como um **erro conhecido no estado atual dos recursos**, útil apenas para entender o impacto da escolha de diretórios. Na prática, essa configuração faz o Android entregar textos em português quando o aparelho estiver configurado para a localidade `en-CA`.
 
 Pela convenção correta, esse diretório deveria conter traduções compatíveis com `en-CA`; se a intenção fosse manter português, o conteúdo deveria estar em um diretório compatível com português, como `values-pt/` ou `values-pt-rBR/`. Esse contraste é útil didaticamente porque mostra que o Android escolhe recursos pela localidade do diretório, e não pelo idioma que o desenvolvedor pretendia usar.
 
